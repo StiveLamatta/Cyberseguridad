@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html> 
+<html>
+    <head>
+        
+        <title>CyberEdu|Aprende Ciberceguridad</title> 
+        <link rel="stylesheet" href="{% static 'estilo.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <nav class="barra">
+            <ul>
+                <li class="barra__logo">
+                    Cybersecurity
+                </li>
+                <li>
+                    Iniciar
+                </li>
+                <li>
+                    Explorar Practicar
+                </li>
+                <li>
+                    Suscriberse
+                </li>
+                <li>
+                    Acceder
+                </li>
+            </ul>
+        </nav>
+
+        <div class="cuerpo">
+            <section class="cuerpo__seccion">
+                <div class="seccion__contenedor seccion__contenedor--grupo">
+                    <div  class="contenedor__separador contenedor__separador--titulo"> 
+                        <h1 class="separador__titulo">CyberEdu</h1>
+                    </div>
+                    <div class="contenedor__separador contenedor__separador--image">
+                        <img class="separador__imagen" src="{% static 'hacker.png' %}" title="hacker">
+                    </div>
+                </div>
+                <div class="seccion__contenedor seccion__contenedor--boton">
+                    <button type="button" class="contenedor__boton contenedor__boton--open"> <p>OPEN</p></button>
+                    <button type="button" class="contenedor__boton contenedor__boton--exit"> <p> EXIT</p></button>
+                </div>
+            </section>
+        </div>
+
+        
+        <div class="secundario">
+            <section class="secundario__seccion secundario__seccion--descripcion">
+                <img class="descripcion__imagen" src="{% static 'programador.png' %}">
+                <p class="descripcion__texto">
+                    Conviertete en un profesional de la ciberseguridad con nuestros módulos interactivos y contenidos actualizados.
+                </p>
+            </section>
+            
+            <section class="secundario__seccion secundario__seccion--conocenos">
+                <p class="seccion__texto seccion__texto--titulo">Conocenos</p>
+                <p class="seccion__texto seccion__texto--texto"> La mejor defensa es una buena prevención en ciberseguridad</p>
+            </section>
+        </div>
+
+        <footer class="pie">
+            <a href="">Aviso legal</a>
+            <a href="">Politica de Privacidad</a>
+        </footer>
+
+    </body>
+</html>
