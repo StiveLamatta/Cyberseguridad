@@ -1,3 +1,10 @@
+/*
+
+:root {
+}
+
+*/
+
 * {
     color:white;
     font-weight:700;
@@ -14,10 +21,192 @@ body {
     background-size:cover;
 }
 
+.fondo {
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    transition: opacity 0.5s, background-color 0.5s
+}
+
+.login {
+    box-sizing:border-box;
+    border:4px solid purple;
+    --ancho_login:300px;
+    --alto_login:260px;
+
+    height:var(--alto_login);
+    width:var(--ancho_login);
+
+    display:none;
+    flex-direction:column;
+    background-color: #78de9a;
+    position: absolute;
+    top:calc((100vh - var(--alto_login))/2);
+    left:calc((100vw - var(--ancho_login))/2);
+    justify-content:center;
+    align-items:center;
+    z-index:100;
+    pointer-events:auto;
+    border-radius:20px;
+}
+
+.login * {
+    color:black;
+}
+
+.login>button {
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:25px;
+    height:25px;
+    background-color:#ff0000;
+    border:3px solid rgb(182, 9, 9);
+    position:absolute;
+    top:-4px;
+    right:-4px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.login>button:hover {
+    background-color: #e80d0ddf;
+}
+
+.login form {
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.login * {
+    color:#5c02b5
+}
+
+.login input {
+    background-color:#f1f5d2;
+    border:2px solid rgb(13, 13, 179);
+    padding:5px;
+    margin:10px;
+    margin-left:0;
+    box-sizing:border-box;
+    border-radius:10px;
+    height:25px;
+    width:200px;
+}
+
+.login .formulario__ingresar {
+    width:100px;
+    height:35px;
+    background-color:aqua
+}
+
+.formulario__ingresar:hover {
+    cursor: pointer;
+    background-color: rgb(165, 251, 251);
+}
+
+
+
+
+
+
+
+
+
+.register {
+    display:none;
+    --alto:260px;
+    --ancho:300px;
+    top:calc((100vh - var(--alto) )/2);
+    left:calc((100vw - var(--ancho))/2);
+    border:3px solid red;
+    position:absolute;
+    flex-direction:column;
+    z-index:100;
+    justify-content:center;
+    align-items:center;
+    width:var(--ancho);
+    height:var(--alto);
+    box-sizing:border-box;
+    background-color:rgb(107, 185, 254);
+    border-radius:20px;
+    opacity:0;
+    transition:opacity 0.2s;
+}
+
+.register * {
+    color:rgb(5, 42, 127);
+}
+
+.register form {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.register>button {
+    color:white;
+    width:25px;
+    height:25px;
+    position:absolute;
+    right:4px;
+    top:4px;
+    border:2px solid rgb(14, 24, 156);
+    border-radius:50%;
+    background-color:purple;
+    text-align:center;
+}
+
+.register>button:hover {
+    background-color:#942ce9;
+    cursor:pointer;
+}
+
+.register input {
+    margin:0 0 10px 0 ;
+    border:2px solid purple;
+    border-radius:20px;
+    background-color:rgb(246, 204, 255);
+}
+
+.formu_re {
+    width:220px;
+}
+
+.register label {
+    margin:0 0 10px 0;
+}
+
+.register input {
+    padding-left:10px;
+    color: rgb(120, 38, 236)
+}
+
+.register input:last-child {
+    width:120px;
+    background-color:#53f4f4
+}
+
+.formu_re_registra:hover {
+    background-color:rgb(66, 224, 195) !important;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
 .barra, .cuerpo, .secundario, .pie {
     box-sizing:border-box;
     display:flex;
 }
+
+
 
 .barra {
     height:70px;
@@ -40,7 +229,7 @@ body {
 .barra ul li {
     text-align:center;
     height:20px;
-    width:225px;
+    width:200px;
     padding:13px;
     border-radius: 10px;
     background:rgb(51, 0, 51);
@@ -104,9 +293,6 @@ body {
     margin:0;
 }
 
-.contenedor__separador--imagen {
-    flex-grow:1
-}
 
 .separador__imagen  {
     height:200px;
@@ -221,7 +407,7 @@ body {
     margin-top:10px;
     text-align: justify;
     font-family:Oswald;
-    font-size:25px;
+    font-size:1.7em;
     font-weight:800;
     padding:10px;
     height: 100%;
