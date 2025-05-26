@@ -41,7 +41,8 @@ def cap_con(request):
         ruta =os.path.join(settings.BASE_DIR,ruta2)
         with open(ruta, "r", encoding="utf-8") as con:
             contenido=md.markdown(con.read())
-    return JsonResponse({"con_cap" : contenido, "id_mod" : idModulo  })
+        return JsonResponse({"con_cap" : contenido, "id_mod" : idModulo  })
+    return JsonResponse({"error": "Método no permitido"}, status=405)
 
 def modulo_contenido(request):
     if request.method=="POST":
@@ -56,5 +57,7 @@ def modulo_contenido(request):
             conte_mod=mod.read()
         md_modulo=md.markdown(conte_mod)
         print("llegue", type(md_modulo))
-    return JsonResponse({"modulo": md_modulo })
+        return JsonResponse({"modulo": md_modulo })
+    return JsonResponse({"error": "Método no permitido"}, status=405)
+
 
