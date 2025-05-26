@@ -15,6 +15,7 @@ function click_mod(a) {
             "Content-Type": "application/json",
             "X-CSRFToken": csrfToken
         },
+        credentials: "include",
         body: JSON.stringify(id_modulo),
     })
     .then(response=> response.json())
@@ -64,6 +65,7 @@ function cap_click(a) {
                     "Content-Type":"application/json",
                     "X-CSRFToken":csrfToken
                 },
+                credentials: "include",
                 body: JSON.stringify(id_cap)
             })
             .then(response => response.json())
