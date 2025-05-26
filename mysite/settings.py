@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost","cyberseguridad-production.up.railway.app"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://cyberseguridad-production.up.railway.app",
+]
 
 # Application definition
 
