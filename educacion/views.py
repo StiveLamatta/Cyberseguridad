@@ -5,10 +5,11 @@ from django.contrib.auth.decorators import login_required
 from mysapp.models import *      
 from django.db.models import F      
 import json
+import os
 
 
 def silabo(request): 
-    ruta_cp =r"educacion\templates\cap1.md"
+    ruta_cp =os.path.join(settings.BASE_DIR,"educacion","templates","cap1.md")
     with open(ruta_cp, "r", encoding="utf-8") as cap:
         capitulo=cap.read()
     md_capitulo=md.markdown(capitulo)
@@ -35,6 +36,8 @@ def cap_con(request):
         ruta=capitulo.objects.get(id=id_capi).ruta_contenido
         print(ruta,"hola")
         ruta=rf"{ruta}"
+        ruta2=ruta.replace("/",os.sep)
+        ruta =os.path.join(settings.BASE_DIR,ruta2)
         with open(ruta, "r", encoding="utf-8") as con:
             contenido=md.markdown(con.read())
     return JsonResponse({"con_cap" : contenido, "id_mod" : idModulo  })
@@ -45,6 +48,8 @@ def modulo_contenido(request):
         print(data)
         ruta_md=modulo.objects.get(id=data).ruta_modulo
         ruta=rf"{ruta_md}"
+        ruta2=ruta.replace("/",os.sep)
+        ruta =os.path.join(settings.BASE_DIR,ruta2)
         print(ruta,"hola2")
         with open(ruta,"r",encoding="utf-8") as mod:
             conte_mod=mod.read()
