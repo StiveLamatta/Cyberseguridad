@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from mysapp.models import *      
 from django.db.models import F      
 import json
+from django.conf import settings
 import os
 
 
